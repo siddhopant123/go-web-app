@@ -17,11 +17,11 @@ pipeline {
             steps {
                 sh '''
                 /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarScanner/bin/sonar-scanner \
-                    -Dsonar.projectKey= \
+                    -Dsonar.projectKey=go-web-app \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=$SONAR_HOST_URL \
                     -Dsonar.token=$SONAR_AUTH_TOKEN \
-                    -Dsonar.projectBaseDir=${WORKSPACE}
+                    -Dsonar.projectBaseDir=/var/lib/jenkins/workspace/go-web-app
                 '''
             }
         }
